@@ -121,12 +121,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-STATIC_URL = '/static/'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.zoho.in'
-EMAIL_HOST_USER = 'care@treetor.in'
+EMAIL_HOST = 'smtpout.secureserver.net'
+EMAIL_HOST_USER = 'info@risagoindia.com'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-EMAIL_HOST_PASSWORD = "Let'sdothis2018"
+EMAIL_HOST_PASSWORD = "RisaGoCmd19#"
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+EMAIL_USE_TLS = True
