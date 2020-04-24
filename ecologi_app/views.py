@@ -9,21 +9,11 @@ import json
 @csrf_exempt
 def email_form(request):
 
-    name = json.loads(request.POST.get("name"))
-    email = json.loads(request.POST.get("email"))
-    company = json.loads(request.POST.get("company"))
-    message = json.loads(request.POST.get("message"))
-    print(name,email,company,message)
-    body ="Name : "+name+"\nEmail : "+email+"\n company : "+company+"\nMessage : "+message
-    email_msg = EmailMessage("Oscar consultancy enquiry", body, settings.EMAIL_HOST_USER, ["saswathcommad@gmail.com"])
-    email_msg.send(fail_silently=False)
-    print(email_msg)
-    return JsonResponse(True,safe=False)
-
-def onelife(request):
-
-    messaage = request.POST.get("message")
     name = request.POST.get("name")
-    email = request.POST.get("email")
-    subject = request.POST.get("subject")
-    email_msg = EmailMessage("ecologi enquiry", messaage, settings.EMAIL_HOST_USER, ["ionut.procop.87@gmail.com"])
+    email = request.POST.get("email").strip()
+    company = request.POST.get("company")
+    message = request.POST.get("message")
+    body ="Name : "+name+"\nEmail : "+email+"\n company : "+company+"\nMessage : "+message
+    email_msg = EmailMessage("Oscar consultancy enquiry", body, settings.EMAIL_HOST_USER, ["iprocop@oscarconsult.ro"])
+    email_msg.send(fail_silently=False)
+    return JsonResponse(True,safe=False)
